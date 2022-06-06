@@ -14,7 +14,8 @@
 
 		<div class="footer">
 
-			<div class="footer__addr">		
+			<div class="column_1">	
+
 				<h2 class="nav__title">KONTAKT</h2>
 				
 				<address>
@@ -24,50 +25,53 @@
 					TLF: 12 34 56 78<br>
 					EMAIL: SRENT@SRENT.DK
 				</address>
+
 			</div>
 		
-			<ul class="footer__nav">
-				<li class="nav__item">
-					<h2 class="nav__title">INFO</h2>
+			<div class="column_2">
 
-					<ul class="nav__ul">
-						<li>
-							<a href="#">FAQ</a>
-						</li>
+				<h2 class="nav__title">INFO</h2>
 
-						<li>
-							<a href="#">HANDELS- OG LEJEBETINGELSER</a>
-						</li>
+				<ul class="nav__ul">
 
-						<li>
-							<a href="#">PRIVATLIVSPOLITIK</a>
-						</li>
+					<li>
+						<a href="#">FAQ</a>
+					</li>
 
-					</ul>
+					<li>
+						<a href="#">HANDELS- OG LEJEBETINGELSER</a>
+					</li>
+
+					<li>
+						<a href="#">PRIVATLIVSPOLITIK</a>
+					</li>
+
+				</ul>
+
+			</div>		
 				
-				</li>
+			<div class="column_3">
 				
-				<li class="nav__item nav__item--extra">
-				
-					<h2 class="nav__title">SOCIALE MEDIER</h2>
+				<h2 class="nav__title">SOCIALE MEDIER</h2>
 					
-					<ul class="nav__ul nav__ul--extra">
-						<li>
-							<a href="#">FACEBOOK</a>
-						</li>
+				<ul class="nav__ul nav__ul--extra">
+
+					<li>
+						<a href="#">FACEBOOK</a>
+					</li>
 						
-						<li>
-							<a href="#">INSTAGRAM</a>
-						</li>
+					<li>
+						<a href="#">INSTAGRAM</a>
+					</li>
 
-				</li>
-				
-			</ul>
+				</ul>
 
+			</div>
+		
 		</div>
 
 		<div class="legal">
-				<p>&copy; 2022 SR ENTERTAINMENT<br></p>
+					<p>&copy; 2022 SR ENTERTAINMENT<br></p>
 		</div>
 
 	</footer>
@@ -75,14 +79,13 @@
 	<style>
 
 		.footer {
-			display: flex;
-			flex-flow: row wrap;
-			padding: 30px 30px 20px 30px;
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			gap: 5px;
+			margin: 0 auto;
+			padding-top: 50px;
+			padding-left: 8vw;
 			background-color: #000000;
-		}
-
-		.footer > * {
-			flex:  1 100%;
 		}
 
 		.nav__title {
@@ -109,18 +112,12 @@
 			line-height: 2em;
 		}
 
+		.footer > * {
+			flex:  1 100%;
+		}
+
 		.footer a {
 			text-decoration: none;
-		}
-
-		.footer__nav {
-			display: flex;
-			flex-flow: row wrap;
-		}
-
-		.footer__nav > * {
-			flex: 1 50%;
-			margin-right: 1.25em;
 		}
 
 		.nav__ul a {
@@ -137,24 +134,6 @@
 			background-color: #000000;
 			color: #F8F8FF;
 			font-family: Oswald;
-		}
-
-		@media screen and (min-width: 40.375em) {
-			.footer__nav > * {
-				flex: 1;
-			}
-		}
-		
-		.nav__item--extra {
-			flex-grow: 2;
-		}
-		
-		.footer__addr {
-			flex: 1 0px;
-		}
-		
-		.footer__nav {
-			flex: 2 0px;
 		}
 
 	</style>
