@@ -30,12 +30,15 @@ get_header();
     
 <style>
 
+    /* Marginerne er blevet rykket ind, så elementerne aligner med sidens øvrige margin */
     article {
         margin-left: 5%;
         margin-right: 5%;
         margin-top: 10%;
     }
 
+    /* Media query er inddraget således at billed og tekst ikke masser hinanden i to snævre søjler på
+    mobiltelefoner og andre enheder med lav opløsning */
     @media only screen and (min-width: 480px) {
         article{
             display: grid;
@@ -47,7 +50,8 @@ get_header();
     .billede{
         max-width: 80%;
     }
-
+     
+    /* Fonten er gjort tyk så at "totalpris" fremgår med fed skrift, som kotymen foreskriver */ 
     .total {
         font-weight: bold;
     }
@@ -65,8 +69,9 @@ get_header();
 
 <script>
 
+    // Her defineres der "function scope" variabler
     let produkt;
-
+    // Definerer stien til json-array produkter i WordpressDB:
     const dbUrl = "http://pletfolio.dk/kea/10_eksamensprojekt/SRENT/wordpress/wp-json/wp/v2/produkt/" + <?php echo get_the_ID() ?>;
     console.log(dbUrl)
 
@@ -77,6 +82,7 @@ get_header();
         visProdukter();
     }
 
+    // Denne funktion viser produkterne i singleview
     function visProdukter(){
     console.log("visProdukt")
         document.querySelector(".billede").src = produkt.billede.guid;
@@ -87,8 +93,6 @@ get_header();
         document.querySelector(".opsaetning").textContent = "EVT. LEVERING, OPSÆTNING & AFHENTNING: " + produkt.opsaetning;
         document.querySelector(".total").textContent = "TOTALPRIS: " + produkt.total;
     }
-
-
 
     hentData();
 
